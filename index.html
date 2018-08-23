@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hangman</title>
+    <!-- Here are the link to outside references -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Cabin+Sketch|Indie+Flower|Kaushan+Script" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar for game page, make sure to include projects drop down -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <img src="assets/images/hangman_i.png" alt=" White Noose against orange background" height="42" width="42">
+            <a class="navbar-brand" href="#">&nbsp;Hangman</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Portfolio
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Me</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Hangman</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Rock Paper Scissors</a>
+                            <a class="dropdown-item" href="#">Psychic</a>
+                            <a class="dropdown-item" href="#">FormulaGen</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col-4">
+                <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Guesses left:
+                        <span id="wrong-g">9</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Letters guessed so far...</h5>
+                        <p class="card-text" id="letters-sofar">Letters will display here</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-4 jumbo">
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Chance at freedom</div>
+                    <div class="card-body">
+                        <p class="card-text" id="comp-ans">_ _ _ _ _ _ _ _ _ _ _</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-4">
+                <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Scoreboard</div>
+                    <div class="card-body">
+                        <h5 class="card-title">losses:
+                            <span id="loss-s">0</span>
+                        </h5>
+                        <h5 class="card-title">Wins:
+                            <span id="win-s">0</span>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-8 offset-2">
+                <div class="card bg-success mb-3">
+                    <h2 class="card-header">Phrase</h2>
+                    <div class="card-body">
+                        <h4 class="card-title">Guess the missing word in the thought to escape death row, use your 9 guesses wisely or risk facing
+                            the gallows</h4>
+                        <h5 class="card-text" id="phrase-opt">Click start to get your first phrase...</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6 offset-5">
+                <button type="button" id="start" class="btn btn-primary btn-lg">Start Game</button>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+
+
+
+
+    <footer>
+        <nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-primary">
+            <img src="assets/images/hangman_i.png" alt=" White Noose against orange background" height="42" width="42">
+            <a class="navbar-brand" href="#">&nbsp;Hangman</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Portfolio
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    &copy;FormulaGen2018
+                </span>
+            </div>
+        </nav>
+    </footer>
+
+</body>
+
+</html>
+</body>
+
+</html>
