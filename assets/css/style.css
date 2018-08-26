@@ -26,6 +26,11 @@ jumbo {
     text-align: center;
 }
 
+#letter-sofar {
+    font-family: 'Kaushan Script', cursive;
+    text-align: center;
+    color: white;
+}
 .card {
     font-size: 20px;
     font-family: 'Indie Flower', cursive;

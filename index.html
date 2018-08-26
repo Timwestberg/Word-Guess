@@ -71,7 +71,7 @@
             <div class="col-4">
                 <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
                     <div class="card-header">Guesses left:
-                        <span id="wrong-g">9</span>
+                        <span id="guess-left"></span>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Letters guessed so far...</h5>
@@ -83,9 +83,9 @@
 
             <div class="col-4 jumbo">
                 <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Chance at freedom</div>
+                    <div class="card-header">Word to Guess</div>
                     <div class="card-body">
-                        <p class="card-text" id="comp-ans">_ _ _ _ _ _ _ _ _ _ _</p>
+                        <h1 class="card-text" id="word-guess"></h1>
                     </div>
                 </div>
             </div>
@@ -96,10 +96,10 @@
                     <div class="card-header">Scoreboard</div>
                     <div class="card-body">
                         <h5 class="card-title">losses:
-                            <span id="loss-s">0</span>
+                            <span id="loss-s"></span>
                         </h5>
                         <h5 class="card-title">Wins:
-                            <span id="win-s">0</span>
+                            <span id="win-s"></span>
                         </h5>
                     </div>
                 </div>
@@ -111,8 +111,8 @@
                 <div class="card bg-success mb-3">
                     <h2 class="card-header">Phrase</h2>
                     <div class="card-body">
-                        <h4 class="card-title">Guess the missing word in the thought to escape death row, use your 9 guesses wisely or risk facing
-                            the gallows</h4>
+                        <h4 class="card-title">Guess the missing word in the thought to win, use your 9 guesses wisely or risk facing
+                            the depressing loss</h4>
                         <h5 class="card-text" id="phrase-opt">Click start to get your first phrase...</h5>
                     </div>
                 </div>
@@ -161,7 +161,7 @@
             </div>
         </nav>
     </footer>
-
+<script src="assets/javascript/game.js"></script>
 </body>
 
 </html>
