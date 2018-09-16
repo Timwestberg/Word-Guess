@@ -42,11 +42,11 @@ var guessesLeft = 9;
 
 
 function game() {
-    selectedWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+    var ranNum = Math.floor(Math.random() * wordBank.length);
+    selectedWord = wordBank[ranNum];
     lettersInWord = selectedWord.split("");
     numBlanks = lettersInWord.length;
-    phrase = phrase[Math.floor(Math.random() * wordBank.length)];
-    hint = phrase;
+    hint = phrase[ranNum];
         
     
     
@@ -71,7 +71,7 @@ function game() {
     }
 
     document.getElementById("phrase-opt").innerText = hint;
-    document.getElementById("word-guess").innerText = blanksAndSuccess.join("_");
+    document.getElementById("word-guess").innerText = blanksAndSuccess.join(" ");
     document.getElementById("guess-left").innerText = guessesLeft;
     document.getElementById("win-s").innerText = winCount;
     document.getElementById("loss-s").innerText = lossCount;
